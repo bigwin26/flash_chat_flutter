@@ -1,11 +1,25 @@
+import 'package:flash_chat/screens/login_screen.dart';
+import 'package:flash_chat/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
+  static const id = 'welcome_screen';
+
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  void handleGoToScreen(path){
+    Navigator.pushNamed(context, path);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,6 +57,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: MaterialButton(
                   onPressed: () {
                     //Go to login screen.
+                    handleGoToScreen(LoginScreen.id);
                   },
                   minWidth: 200.0,
                   height: 42.0,
@@ -61,6 +76,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: MaterialButton(
                   onPressed: () {
                     //Go to registration screen.
+                    handleGoToScreen(RegistrationScreen.id);
                   },
                   minWidth: 200.0,
                   height: 42.0,
